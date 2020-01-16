@@ -1,0 +1,2 @@
+# R5T.Tromso.Startup
+A types library allowing the the R5T.Tromso IServiceBuilder to be configured by an R5T.Richmond IStartup instance.
