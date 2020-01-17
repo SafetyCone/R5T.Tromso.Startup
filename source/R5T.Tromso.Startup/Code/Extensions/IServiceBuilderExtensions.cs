@@ -40,5 +40,16 @@ namespace R5T.Tromso.Startup
 
             return serviceBuilder;
         }
+
+        public static TService UseStartup<TStartup, TService>(this IServiceBuilder<TService> serviceBuilder, IServiceProvider configurationServiceProvider)
+            where TStartup : class, IStartup
+        {
+            serviceBuilder.UseStartup<TStartup>();
+
+            serviceBuilder.Build(configurationServiceProvider);
+
+            var service = serviceBuilder.GetResult();
+            return service;
+        }
     }
 }
